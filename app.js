@@ -47,6 +47,7 @@
       cats.forEach((cat) => {
         let elem = document.createElement("li");
         elem.textContent = cat.name;
+        elem.className = "list-group-item list-group-item-action ";
         this.catList.appendChild(elem);
 
         elem.addEventListener(
@@ -54,6 +55,7 @@
           ((cat) => {
             return () => {
               octopus.setCurrentCat(cat);
+
               catView.render();
             };
           })(cat)
