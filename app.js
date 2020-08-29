@@ -12,8 +12,9 @@
 
   var octopus = {
     init: function () {
-      catListView.init();
       this.setCurrentCat(data.cats[0]);
+
+      catListView.init();
       catView.init();
     },
     // Get cats from data
@@ -42,13 +43,13 @@
       this.render();
     },
 
+    // Render cat list
     render: function () {
       let cats = octopus.getCats();
       cats.forEach((cat) => {
         let elem = document.createElement("li");
         elem.textContent = cat.name;
         elem.className = "list-group-item list-group-item-action ";
-        this.catList.appendChild(elem);
 
         elem.addEventListener(
           "click",
@@ -60,10 +61,12 @@
             };
           })(cat)
         );
+        this.catList.appendChild(elem);
       });
     },
   };
 
+  // Cat view object
   var catView = {
     init: function () {
       this.catName = document.getElementById("catName");
