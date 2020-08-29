@@ -14,17 +14,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <h1 class="m-3" >This is my Cat Clicker Premium</h1>
+      <div class="row m-3 justify-content-center">
+        <h2 class="text-center">This is my Cat Clicker Premium</h2>
       </div>
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
+          <div class="mb-3">
+            <button class="btn btn-primary btn-block" id="adminBtn">Admin</button>
+          </div>
           <div>
-            <ul class="list-group " id="catList"></ul>
+            <ul class="list-group mb-3" id="catList"></ul>
           </div>
         </div>
-        <div class="col-md">
-          <div class="card" style="width: auto">
+        <div class="col-md ">
+          
+          <div id="adminForm" class="row border rounded-sm d-none p-3 mx-0 mb-3">
+            <form class="w-100">
+              <div class="form-group ">
+                <label for="catNameInput">Cat Name</label>
+                <input type="text" class="form-control" id="catNameInput">
+              </div>
+              <div class="form-group">
+                <label for="catImgUrlInput">Image URL</label>
+                <input type="text" class="form-control" id="catImgUrlInput">
+              </div>
+              <div class="form-group">
+                <label for="imgClickCount">Image Click Count</label>
+                <input type="text" class="form-control" id="imgClickCount">
+              </div>
+              
+              <button id="formCancel" type="button" class="btn btn-primary">Cancel</button>
+              <button id="formSubmit" type="button" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="card mb-3" style="width: auto">
             <img src="" alt="" class="card-img-top img-fluid" id="catImg" />
             <div class="card-body">
               <h5 class="card-title">Name: <span id="catName"></h5>
